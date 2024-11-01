@@ -1,32 +1,61 @@
 plugins {
-	id 'groovy'
-	id 'org.springframework.boot' version '3.3.4'
-	id 'io.spring.dependency-management' version '1.1.6'
+    id 'org.jetbrains.kotlin.jvm' version '1.9.25'
+    id 'org.jetbrains.kotlin.plugin.spring' version '1.9.25'
+    id 'org.springframework.boot' version '3.3.5'
+    id 'io.spring.dependency-management' version '1.1.6'
+    id 'org.jetbrains.kotlin.plugin.jpa' version '1.9.25'
 }
 
 group = 'top.jiangliuhong'
 version = '0.0.1-SNAPSHOT'
 
 java {
-	toolchain {
-		languageVersion = JavaLanguageVersion.of(17)
-	}
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
 }
 
 repositories {
-	mavenCentral()
+    mavenCentral()
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation 'org.apache.groovy:groovy'
-	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.3'
-	runtimeOnly 'com.mysql:mysql-connector-j'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	testImplementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter-test:3.0.3'
-	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation "com.h2database:h2"
+    implementation 'com.fasterxml.jackson.module:jackson-module-kotlin'
+
+
+    // Kotlin Scripting 依赖
+//    implementation("org.jetbrains.kotlin:kotlin-scripting-jsr223:1.9.25")
+//    implementation("org.jetbrains.kotlin:kotlin-scripting-common:1.9.25")
+//    implementation("org.jetbrains.kotlin:kotlin-scripting-jvm:1.9.25")
+//    implementation("org.jetbrains.kotlin:kotlin-scripting-jvm-host:1.9.25")
+
+//    implementation("org.jetbrains.kotlin:kotlin-stdlib:1.9.25")
+//    implementation("org.jetbrains.kotlin:kotlin-scripting-jsr223:1.9.25")
+//    implementation("org.jetbrains.kotlin:kotlin-scripting-common:1.9.25")
+//    implementation("org.jetbrains.kotlin:kotlin-scripting-jvm:1.9.25")
+//    implementation("org.jetbrains.kotlin:kotlin-scripting-jvm-host:1.9.25")
+//    implementation("org.jetbrains.kotlin:kotlin-scripting-compiler-embeddable:1.9.25")
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.jetbrains.kotlin:kotlin-test-junit5'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+kotlin {
+    compilerOptions {
+        freeCompilerArgs.addAll '-Xjsr305=strict'
+    }
+}
+
+allOpen {
+    annotation 'jakarta.persistence.Entity'
+    annotation 'jakarta.persistence.MappedSuperclass'
+    annotation 'jakarta.persistence.Embeddable'
 }
 
 tasks.named('test') {
-	useJUnitPlatform()
+    useJUnitPlatform()
 }

@@ -36,5 +36,7 @@ out/
 ### VS Code ###
 .vscode/
 
-
-application-local.yml
+### Kotlin ###
+.kotlin
+wos.db
+wosdb.*
