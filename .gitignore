@@ -39,4 +39,5 @@ out/
 ### Kotlin ###
 .kotlin
 wos.db
+wos.db.*
 wosdb.*

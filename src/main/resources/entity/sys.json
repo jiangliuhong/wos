@@ -1,0 +1,20 @@
+[
+  {
+    "tableName": "tests",
+    "columns": [
+      {
+        "name": "id",
+        "type": "Long",
+        "primaryKey": true
+      },
+      {
+        "name": "name",
+        "type": "String"
+      },
+      {
+        "name": "email",
+        "type": "String"
+      }
+    ]
+  }
+]

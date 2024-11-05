@@ -1,10 +1,9 @@
-package top.jiangliuhong.wos.entity
+package top.jiangliuhong.wos.dao.entity
 
 import jakarta.persistence.*
 
 @Entity
-@Table(name = "\"user\"")
-data class User(
+data class TestUser(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long? = null,

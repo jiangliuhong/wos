@@ -22,9 +22,11 @@ repositories {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-web'
-    implementation "com.h2database:h2"
     implementation 'com.fasterxml.jackson.module:jackson-module-kotlin'
-
+    implementation("org.jetbrains.kotlin:kotlin-reflect")
+    implementation "com.h2database:h2"
+    implementation 'com.alibaba:fastjson:2.0.53'
+    implementation 'net.bytebuddy:byte-buddy:1.15.7'
 
     // Kotlin Scripting 依赖
 //    implementation("org.jetbrains.kotlin:kotlin-scripting-jsr223:1.9.25")
