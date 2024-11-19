@@ -27,19 +27,7 @@ dependencies {
     implementation "com.h2database:h2"
     implementation 'com.alibaba:fastjson:2.0.53'
     implementation 'net.bytebuddy:byte-buddy:1.15.7'
-
-    // Kotlin Scripting 依赖
-//    implementation("org.jetbrains.kotlin:kotlin-scripting-jsr223:1.9.25")
-//    implementation("org.jetbrains.kotlin:kotlin-scripting-common:1.9.25")
-//    implementation("org.jetbrains.kotlin:kotlin-scripting-jvm:1.9.25")
-//    implementation("org.jetbrains.kotlin:kotlin-scripting-jvm-host:1.9.25")
-
-//    implementation("org.jetbrains.kotlin:kotlin-stdlib:1.9.25")
-//    implementation("org.jetbrains.kotlin:kotlin-scripting-jsr223:1.9.25")
-//    implementation("org.jetbrains.kotlin:kotlin-scripting-common:1.9.25")
-//    implementation("org.jetbrains.kotlin:kotlin-scripting-jvm:1.9.25")
-//    implementation("org.jetbrains.kotlin:kotlin-scripting-jvm-host:1.9.25")
-//    implementation("org.jetbrains.kotlin:kotlin-scripting-compiler-embeddable:1.9.25")
+    implementation 'io.xream.sqli:sqli-builder:2.1.10'
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.jetbrains.kotlin:kotlin-test-junit5'
