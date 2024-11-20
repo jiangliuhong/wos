@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: wos
+  datasource:
+    url: jdbc:mysql://124.223.166.245:3306/wos?useUnicode=true&characterEncoding=utf-8&useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: "Ja.!rome@163.com@$"
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    main:
+      allow-bean-definition-overriding: true
+    application:
+      name: psharing-app
+    hikari:
+      idle-timeout: 600000
+      max-lifetime: 28740000
+      connection-timeout: 30000
+      connection-test-query: select 1
